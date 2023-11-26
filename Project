@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Do you Love me</title>
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+        user-select: none;
+      }
+      body {
+        display: grid;
+        place-items: center;
+        min-height: 100vh;
+        background-color: #0e0e0e;
+      }
+
+      .container {
+        background-image: linear-gradient(to top right, #00ff88, #00d9ff);
+        padding: 3rem;
+        border-radius: 1rem;
+        position: relative;
+        box-shadow: 0 0 1rem #00ffdd;
+      }
+      h2 {
+        font-size: 3rem;
+        color: #fff;
+        text-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+      }
+      .btns {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 2rem;
+      }
+      button {
+        font-size: 1.2rem;
+        padding: 0.5rem 1rem;
+        background-color: rgba(0, 0, 0, 0.5);
+        border: 0.15rem solid rgba(255, 255, 255, 1);
+        color: #ffffff;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Do you love me?😥</h2>
+      <div class="btns">
+        <button class="yes_btn">Yes</button>
+        <button class="no_btn">No</button>
+      </div>
+    </div>
+
+    <script>
+      const container = document.querySelector(".container");
+      const yes_btn = document.querySelector(".yes_btn");
+      const no_btn = document.querySelector(".no_btn");
+
+      no_btn.addEventListener("click", () => {
+        no_btn.style.position = "absolute";
+
+        const random_left = Math.floor(Math.random() * container.clientWidth);
+        const random_top = Math.floor(Math.random() * container.clientHeight);
+
+        if (random_left >= container.clientWidth / 2)
+          no_btn.style.left = `${random_left - no_btn.clientWidth}px`;
+
+        if (random_top >= container.clientHeight / 2)
+          no_btn.style.top = `${random_top - no_btn.clientHeight}px`;
+      });
+
+      yes_btn.addEventListener("click", () => {
+        container.innerHTML = `<h2>Hehe! i knew it, <br> I love you tooo umaaaaa.......😘
+            <br> Take Care Gwadi...</h2>`;
+      });
+    </script>
+  </body>
+</html>
